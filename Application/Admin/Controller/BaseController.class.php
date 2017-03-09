@@ -10,9 +10,14 @@ namespace Admin\Controller;
 use Think\Controller;
 class BaseController extends Controller{
     protected function _initialize(){
-        echo 'wer';
+        // 获取当前用户ID
+//        var_dump('wrdfss');die();
+        define('UID', is_login());
+        if (!UID) {// 还没登录 跳转到登录页面
+            $this->redirect('login/login');
+        }
     }
-    public function test(){
-        echo 'dfw';
+    public function login(){
+        $this->display();
     }
 }
