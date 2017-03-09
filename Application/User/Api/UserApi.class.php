@@ -11,6 +11,7 @@ namespace User\Api;
 use User\Api\Api;
 use User\Model\UcenterMemberModel;
 
+//class UserApi extends Api{
 class UserApi extends Api{
     /**
      * 构造方法，实例化操作模型
@@ -39,12 +40,13 @@ class UserApi extends Api{
      * @return integer           登录成功-用户ID，登录失败-错误编号
      */
     public function login($username, $password, $type = 1){
+//        var_dump($username,$password);die('ere');
         $username=str_replace(array('"',"'",'`',',',')','(','='),'',$username);
         if(file_exists('./api/uc_login.lock')){
             include_once './api/uc_client/client.php';
-            if(strtolower(UC_CHARSET) == 'gbk'){
-                $username =  iconv('UTF-8', 'GBK', $username);
-            }
+//            if(strtolower(UC_CHARSET) == 'gbk'){
+//                $username =  iconv('UTF-8', 'GBK', $username);
+//            }
 
             $uc_user = uc_user_login($username,$password,0);
             if($uc_user[0]==-2){
@@ -63,7 +65,8 @@ class UserApi extends Api{
                 return $uc_user[0];
             }
         }else{
-            if(UC_SYNC && $username != get_username(1)){
+//            if(UC_SYNC && $username != get_username(1)){
+            if(0 && $username != get_username(1)){
                 return $this->ucLogin($username, $password);
             }
             return $this->model->login($username, $password, $type);
