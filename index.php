@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 
 // 应用入口文件
-
+//252902542
 // 检测PHP环境
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
@@ -22,6 +22,12 @@ define('BIND_MODULE','Admin');
 define('APP_PATH','./Application/');
 // 定义缓存及日志目录
 define('RUNTIME_PATH', './Dynamic/' );
+<<<<<<< HEAD
+=======
+define('UC_DBNAME', 'open');
+define('UC_PREFIX', 'oc_');
+define('UC_DBPWD', 'jkljkl');
+>>>>>>> dc00bc8... none
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
