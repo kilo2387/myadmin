@@ -14,12 +14,19 @@
 function is_login()
 {
     if(is_api_login()){
+<<<<<<< HEAD
 //        var_dump(is_api_login());die();
+=======
+>>>>>>> 69cdb90674a2c52046cf430616075d5ad0b63b39
         return is_api_login();
     }
 
 //    print_r(function_exists('I_POST'));die('w');
     $user = session('user_auth');
+<<<<<<< HEAD
+=======
+//    var_dump($user);die();
+>>>>>>> 69cdb90674a2c52046cf430616075d5ad0b63b39
     if (empty($user)) {
         return  0;
     } else {
@@ -89,6 +96,7 @@ function get_username($uid = 0)
 }
 
 /**
+<<<<<<< HEAD
  * 根据时间戳，计算周几
  * @author liwei 2015.12.18
  * @param string $data 时间戳
@@ -142,6 +150,8 @@ function data_auth_sign($data)
 }
 
 /**
+=======
+>>>>>>> 69cdb90674a2c52046cf430616075d5ad0b63b39
  * 系统非常规MD5加密方法
  * @param  string $str 要加密的字符串
  * @return string
