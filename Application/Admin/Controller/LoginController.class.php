@@ -9,11 +9,9 @@ namespace Admin\Controller;
 use Think\Controller;
 use User\Api\UserApi;
 class LoginController extends Controller{
-
     public function login($user_name = null, $time_password = null){
         $username = $user_name;
         $password = $time_password;
-
         //如果有登录请求
         if(IS_POST){
             $user = new UserApi();
